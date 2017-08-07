@@ -1,0 +1,1 @@
+call haspdinst_nokey -purge

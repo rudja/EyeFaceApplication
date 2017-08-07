@@ -1,0 +1,18 @@
+C:\Users\Innovation\Downloads\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.exe.config
+C:\Users\Innovation\Downloads\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.csprojResolveAssemblyReference.cache
+C:\Users\Innovation\Downloads\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.exe
+C:\Users\Innovation\Downloads\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.pdb
+C:\Users\Innovation\Downloads\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.exe
+C:\Users\Innovation\Downloads\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.pdb
+C:\Users\Innovation\Documents\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.exe.config
+C:\Users\Innovation\Documents\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.exe
+C:\Users\Innovation\Documents\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.pdb
+C:\Users\Innovation\Documents\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.csprojResolveAssemblyReference.cache
+C:\Users\Innovation\Documents\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.exe
+C:\Users\Innovation\Documents\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.pdb
+C:\Users\Innovation\Documents\Visual Studio 2015\Projects\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.exe.config
+C:\Users\Innovation\Documents\Visual Studio 2015\Projects\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.exe
+C:\Users\Innovation\Documents\Visual Studio 2015\Projects\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.pdb
+C:\Users\Innovation\Documents\Visual Studio 2015\Projects\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.csprojResolveAssemblyReference.cache
+C:\Users\Innovation\Documents\Visual Studio 2015\Projects\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.exe
+C:\Users\Innovation\Documents\Visual Studio 2015\Projects\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\wrappers\csharp\eyeface-cs-example\eyeface-cs-example.pdb

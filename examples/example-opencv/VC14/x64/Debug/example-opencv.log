@@ -1,0 +1,4 @@
+﻿  example-opencv.cpp
+c:\users\innovation\documents\visual studio 2015\projects\release-eyefacesdk-v4.4.0615-windows-10-vc14-x64-hasp\examples\example-opencv\example-opencv.cpp(945): warning C4715: 'ancestryFunct' : les chemins de contrôle ne retournent pas tous une valeur
+  example-opencv.vcxproj -> C:\Users\Innovation\Documents\Visual Studio 2015\Projects\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\examples\example-opencv\VC14\\..\example-opencv.exe
+  example-opencv.vcxproj -> C:\Users\Innovation\Documents\Visual Studio 2015\Projects\Release-EyeFaceSDK-v4.4.0615-Windows-10-VC14-x64-HASP\examples\example-opencv\VC14\\..\example-opencv.pdb (Full PDB)

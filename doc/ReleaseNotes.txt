@@ -1,0 +1,230 @@
+////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+//                                                                //
+//    Release notes to EyeFace-SDK application                    //
+//    ----------------------------------------------------------  //
+//                                                                //
+//     Eyedea Recognition, Ltd. (C) 2017, May, 2nd                //
+//                                                                //
+//     Contact:                                                   //
+//               web: http://www.eyedea.cz                        //
+//              email: info@eyedea.cz                             //
+//                                                                //
+//     Version:  4.4.0                                            //
+//                                                                //
+//                                                                //
+////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+Release v 4.4.0 (May 2017)
+  - New major release.
+  - Redefined API. Small changes to Standard API and completely new Expert API.
+  - New deep learning based Face attribute recognition engine (age, gender, emotion, ancestry).
+  - New image format shared by all Eyedea Recognition's libraries, directly castable to OpenCV's IplImage format.
+  - Log to server and file now use JSON syntax.
+
+Release v 3.12.0 (April 2015)
+  - feature: New award winning face detector, achieves 2nd best on FDDB benchmark (http://vis-www.cs.umass.edu/fddb/results.html)
+             Major improvement in detection accuracy in real-time face detector, now default in EyeFace SDK.
+             (The configuration is not the same as in default real-time detector due to speed constraints. Contact us to receive the award winning config.ini)
+  - update: Sentinel LDK 7.3 used for shared library protection. Enhanced envelope protection results 
+            in strange behaviour (this is on purpose to make reverse engineering hard) of binaries in case that 
+            license is not found. Always check stderr for problems with license when seeing segmentation faults.
+            You can always check your license with example-getinfo or at http://localhost:1947.
+  - bugfix: In expert-API, gender response was returned multiplied by 1.5 in comparison with standard-API.
+  - bugfix: Remote logging syntax. "actionID" was by mistake sent as "actionid" or "actionId". This change breaks all 
+    servers listening to EyeFace SDK that were expecting the variable with wrong capitalization. 
+  - bugfix: Remote logging - start time in initial message was 0 instead of current time.
+  - bugfix: Locale problem in logging / remote logging: The decimal point could be written/send as comma if the client code
+            changed the locale to a language where the decimal point is represented as comma. Now only decimal point is send
+            independently of the locale settings. 
+  - API CHANGE: Log to text file - commas changed to ';' signs.
+  - API CHANGE: Remote logging - Live track info - BB and angles values now separated by ; sign instead of comma.
+  - BETA API CHANGE: Color detection now requires setup in config.ini, EyeFaceAdvanced.h
+  - Security fix: Disabled SSLv3 in HTTPS remote logging, now using TLSv1 (using OpenSSL 1.0.1m, libcurl 7.41.0)
+
+Release v 3.11.0 (November 2014)
+  - API UPDATE: Added function efGetLibraryVersion, which returns integer corresponding to library version
+  - API DEPRECATION: Deprecated API was removed from EyeFace SDK
+  - API CHANGE: Detection models are now specified differently, see new config.ini and/or Developers Guide.
+  - API CHANGE: EfGender enumeration values changed! GENDER_MALE and GENDER_UNKNOWN underlying values swapped.  
+  - bugfix: detection on image borders, especially with rotations enabled
+
+Release v 3.10.0 (October 2014)
+  - bugfix - removed pthreadVC2.dll (and thus also EyeFace.dll) dependency on Microsoft's Visual Studio redistributable package on Microsoft Windows.
+  - bugfix - tracking might fail while tracking multiple faces that appear and disappear shortly after each other
+  - bugfix - person id not assigned in time limit (the id was assigned later so that the fix only affected visualisation in EfVisualData)
+  - C# wrapper rewritten - new version of C# wrapper with unified naming conventions, and most of the functionality imported 
+  - bugfix - face recognition subsystem - the performance was improved
+  - bugfix - config.ini generator typo fixed 
+  - Developers Guide - update on how to manage Sentinel LDK's Software key licenses by clients
+
+Release v 3.9.0 (July 2014)
+  - bugfix - Now it's possible to run EyeFace SDK without landmark detector (faster, but precision is decreased).
+  - bugfix - Configuration file config.ini can now be located anywhere, in previous versions, it must have been in /eyefacesdk/ directory.
+  - bugfix - Landmark positions correct when processing partial image region using BoundingBox passed to efMain().
+  - bugfix - EyeFace GUI now works with Sentinel network keys.
+  - bugfix - Incorrect world position estimation at video startup fixed.
+  - feature - Added new function to detect Sentinel LDK key number used after EyeFace initialization.
+  - feature - Added Java wrapper to make EyeFace SDK accessible to Java developers. Developers Guide updated with example project.
+  - feature - New landmark detector with 19 feature points (previously 8).
+  - modification - All wrappers (csharp, java, mex) were moved to \wrappers\ directory.
+  - Expert SDK beta test - We release a beta version of color detector, further improving performance. You MUST read the details 
+                           in EyeFaceAdvaced.h. The beta is only available to EyeFace Expert SDK users.
+
+Release v 3.8.0 (February 2014)
+  - New Documentation - Developer's Guide PDF
+  - Improved landmark detection - higher precision landmarks, but slower (10% frame rate drop, you can disable precision landmarks in configuration file)
+  - Library unified to a single package with dual API, accessible using license key type (Standard, Expert)
+  - BUG FIX - rotations : face detector now allows for detection with in-plane rotation, see Developer's Guide
+  - EfVisualData structure changed (added variable), rebuild with new header files
+  - Updated Doxygen documentation
+  - new version of remote logging library - enables https connection to log server
+
+Release v 3.7.0 (October 2013)
+- Coding conventions changed, see header files. 
+  Old variable names are still usable (EXCEPT image manipulation functions), 
+  but will be removed in future releases. You MUST rename the image 
+  manipulation functions in your code.
+- new Age recognition model, with 81% of age error < 10 years (previously 75% of age error < 10 years)
+- New Face landmark detector library, "LandmarkRS", using min-convolutions method, 
+  1.5 ms computation time per face compared to 5.6 ms per face in previous release,
+  detection performance unchanged.
+
+Release 2013-05-31
+- Major Stable Release for all platforms, v3.6.0
+- new multiview detector 
+   - detects frontal faces and profile faces up to 90 degrees
+   - face properties only computed on frontal faces
+   - property to switch back to frontal mode
+- new Landmark model for improved face landmarks detection
+- new age and gender model compared to the last Major Release 
+- attention time logging and output
+- remote logging now re-uses the connection socket - improved performance
+- efMain now able to process faces in parallel, check the config-parameters
+   - if the mean number of faces per frame > 3, the processing is up to 2.5x faster
+   - by default this feature is turned to use only 2 threads
+   - set the number of threads based on your required CPU load
+- opencv example improved with face yaw angle and attention visualisation
+- You may now move SW licenses from one PC to another using rehost-tool and RUS.exe executables
+   - see README.txt for details
+- new version of Sentinel LDK, improving possibility for license checking
+   - customers may now built license servers in large networks
+
+Release 2013-05-14
+- Minor Release 
+- started versioning with v3.5.0
+- Added IP camera streaming C# example "example-cs-ip-streaming"
+
+Release 2013-05-02
+- Minor Release
+- Added C# wrapper class with example project (example-cs dir)
+- New age and gender recognition models improving recognition performance
+- New Landmark-based head yaw angle estimation 
+  - efVisualData's new variable dAngles[2]
+  - added also to server live logging as 'angles' param
+  - openCV example can now show yaw angle estimation after key 'A' is pressed - see the source code
+- Detection bounding box now sent via server logging as 'BB' param
+- [WINDOWS] 3rdparty dir added containing .NET Framework 4 Web installer
+
+Release 2013-03-07
+- Stable Release for all major platforms
+- identity recognition error rate significantly lowered
+- efVisualData structure now has a world-position coordinates of detected persons (e.g. distance from camera)
+- SW protection trial keys now included in all versions
+
+Release 2013-01-22
+- age + gender aggregation bugfix
+- Stable release for CentOS / Debian / Ubuntu / Windows
+- Forbidden lists logic added for improved unique person counting
+- Unique person count sw protection added, new key needed 
+
+Release 2013-01-10
+
+- tested on Kubuntu 12.04, 64 bit
+
+- changes in EyeFace.h
+      - structures changed efVisualOutput, efDetection, efVisualData
+      - for example ID has now new meaning in efVisualOutput! Check the documentation for details.
+      - CSharp code no longer valid!
+
+- changes in EyeFaceTrack
+      - efTrackShutdownTracker added, moves all live tracks at the end of program to dead tracks
+      
+- added EyeFaceFaceData
+      - aggregation of all Face information (Age, Gender, ID);
+
+- changes in EyeFaceGender/Age/GenderAge #########!!!#########
+      - these function no longer calls Landmark detection and face extraction. 
+      - You have to manually compute the landmarks using efRunFaceLandmarks and then extract the face using 
+        efRunFaceImageExtraction under advanced API framework. 
+      
+- added EyeFaceID
+      - framework for identity computation
+      
+- added EyeFaceOutput
+      - visual output + track output 
+      
+- out of date EyeFaceRcg and EyeFaceRcgClst
+      - no longer working, to be removed in next releases
+      
+- examples basic + basic + advanced + opencv updated
+
+- all Makefiles changed, doxy documentation updated 
+
+- bug fixes to eye (JPEG read not closing file header, image filtering using reciprocal of smooth factor)
+
+
+Release 2012-09-28:
+-------------------
+- 64b Linux build with the remote server communication added (USE_CURL defined).
+
+
+Release 2012-07-09:
+-------------------
+- a bug in efInitEyeFace() removed (the second extra license checking was
+switched in the centos build)
+
+
+Release 2012-06-11:
+-------------------
+- changes in EyeFaceType.h:
+    - changes in definitions of EfHaspFeatureInfo and EfHaspKyeInfo, new items
+      added
+- changes in EyeFace.h:
+    - function fcn_efHaspGetKeyInfo(), the new input argument key_id added
+    - new functions introduced:
+        - efHaspGetKeyIdsFromInfo(),
+        - efHaspGetSessionKeyInfo(),
+        - efHaspWriteAllC2VtoOneFile()
+- changes in hasp-api.h:
+    - changes in definitions of HaspFeatureInfo and HaspKyeInfo, new items
+      added
+     - function haspGetKeyInfo(), the new input argument key_id added
+    - new functions introduced:
+        - haspGetKeyIdsFromInfo(),
+        - haspGetSessionKeyInfo(),
+        - haspWriteAllC2VtoOneFile()
+- a bug in efRunFaceGenderAge() removed (age_response a gender_response hadn't
+  been copied to the output structure; only in Advanced-API)
+
+
+Release 2012-05-31:
+-------------------
+- bug in writing ack-file in efHaspActivateV2C() removed
+- bug in getting expiration/starting times in efGetHaspKeyInfo() removed
+
+
+Release 2012-05-23:
+-------------------
+- 32bit build
+
+
+Release 2012-05-15:
+-------------------
+- HASP licensing added
+
+
+Release 2012-05-07:
+-------------------
+- SHK flags changed, SP_ENABLE_TERMINAL_CLIENT switched on
+

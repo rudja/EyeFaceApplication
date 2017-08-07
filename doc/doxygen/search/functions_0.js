@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['effreeattributes',['efFreeAttributes',['../group___expert.html#ga3d982aa485fc8dad19cfee973a721c34',1,'EyeFaceExpert.h']]],
+  ['effreedetections',['efFreeDetections',['../group___expert.html#ga2789ca2767a313d0514c82d7e56d609c',1,'EyeFaceExpert.h']]],
+  ['effreeeyeface',['efFreeEyeFace',['../group___standard.html#gab3334281502da9ea128d6fdd0bc373b6',1,'EyeFace.h']]],
+  ['effreelandmarks',['efFreeLandmarks',['../group___expert.html#ga6316b38a89e5d0cc26800b970f3c4458',1,'EyeFaceExpert.h']]],
+  ['effreetrackinfo',['efFreeTrackInfo',['../group___standard.html#gae1b3f2f20bef3f64295699d666539d92',1,'EyeFace.h']]],
+  ['efgetlibraryversion',['efGetLibraryVersion',['../group___standard.html#ga387736d0700581b85ffb95c23701552c',1,'EyeFace.h']]],
+  ['efgettrackinfo',['efGetTrackInfo',['../group___standard.html#ga9db7b69b292b315558f114899c9ad91f',1,'EyeFace.h']]],
+  ['efiniteyeface',['efInitEyeFace',['../group___standard.html#ga71e28c75c2e28950f3612fb165d72abf',1,'EyeFace.h']]],
+  ['eflogtofilewritetrackinfo',['efLogToFileWriteTrackInfo',['../group___expert.html#ga84454176db1fc67738a3aeb01e1d773f',1,'EyeFaceExpert.h']]],
+  ['eflogtoservergetconnectionstatus',['efLogToServerGetConnectionStatus',['../group___standard.html#gadc940dab3fc8891341ef249adf29b3a7',1,'EyeFace.h']]],
+  ['eflogtoserversendping',['efLogToServerSendPing',['../group___expert.html#gae6478363a815be4d4f7931b554956e30',1,'EyeFaceExpert.h']]],
+  ['eflogtoserversendtrackinfo',['efLogToServerSendTrackInfo',['../group___expert.html#ga462a8370f14beab4584cd014fecd1aa3',1,'EyeFaceExpert.h']]],
+  ['efmain',['efMain',['../group___standard.html#gae4e2e47892452482f19ba1acbd84b50a',1,'EyeFace.h']]],
+  ['efrecognizefaceattributes',['efRecognizeFaceAttributes',['../group___expert.html#ga54132a5484fbeba09baf08dd845c502e',1,'EyeFaceExpert.h']]],
+  ['efreseteyeface',['efResetEyeFace',['../group___standard.html#gac57746e460391899843ed86718ce8084',1,'EyeFace.h']]],
+  ['efrunfacedetector',['efRunFaceDetector',['../group___expert.html#gae3db17c7d631c03c6b87f4aa5ea2c5ba',1,'EyeFaceExpert.h']]],
+  ['efrunfacelandmark',['efRunFaceLandmark',['../group___expert.html#gaffbaff2c3dd0aa50b7a539e50d2b63fd',1,'EyeFaceExpert.h']]],
+  ['efshutdowneyeface',['efShutdownEyeFace',['../group___standard.html#ga1bbbe0d290c641c64397c6c4bd8ba490',1,'EyeFace.h']]],
+  ['efupdatetracker',['efUpdateTracker',['../group___expert.html#gaa55d260b100c94ce1adc8ec079877af5',1,'EyeFaceExpert.h']]]
+];
