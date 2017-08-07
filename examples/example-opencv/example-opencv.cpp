@@ -335,8 +335,11 @@ bool convertCvImage2ERImage(const cv::Mat & cv_image, ERImage& er_image)
 // Forward definition of function.
 void drawVisuals(cv::Mat & image, EfTrackInfoArray track_info_array, double fps);
 
-string maleOrFemaleFunct(double response);
-string ancestryFunct(int response);
+const char* maleOrFemaleFunct(double response);
+
+const char* ancestryFunct(int response);
+
+const char* emotionFunct(double response);
 
 
 // This function will run during execution.
@@ -480,21 +483,39 @@ int main(int argc, char * argv[])
 			//All verification before sending any data to server
 			if (track_info->face_attributes.gender.recognized == EF_TRUE && track_info->face_attributes.age.recognized && track_info->face_attributes.emotion.recognized && track_info->face_attributes.ancestry.recognized)
 			{
-				if (track_info->person_id != 0) {
-					std::cout << "PersonId?" << track_info->person_id << std::endl;						//0 if not known yet, anything else if known. 
+				if (track_info->person_id != 0) {				
 
 					//Verification of the gender
-					string gender = maleOrFemaleFunct(track_info->face_attributes.gender.response);
-					std::cout << "Male or female?" << gender << std::endl;
+					const char* gender = maleOrFemaleFunct(track_info->face_attributes.gender.response);
 
-					std::cout << "Age?" << track_info->face_attributes.age.value << std::endl;			//Can be change if new detection
-					std::cout << "Emotion?" << track_info->face_attributes.emotion.value << std::endl;	//Can be change if new detection
+					//Verification of the emotion
+					const char* emotion = emotionFunct(track_info->face_attributes.emotion.value);	
 					
 					//Verification of the ancestor
 					//I casted the value into a int because switch function do not accept double for comparaison
-					string ancestry = ancestryFunct(static_cast<int>(track_info->face_attributes.ancestry.value));
-					std::cout << "Ancestry?" << ancestry << std::endl;
-					std::cout << "Attention_time?" << track_info->attention_time << std::endl;			//Attention time of the person in second
+					const char* ancestry = ancestryFunct(static_cast<int>(track_info->face_attributes.ancestry.value));
+
+					//Format data into a json object
+					StringBuffer s;
+					Writer<StringBuffer> writer(s);
+
+					writer.StartObject();																// Between StartObject()/EndObject(), 
+					writer.Key("PersonId");																// 0 if not known yet, anything else if known. 
+					writer.Uint(track_info->person_id);
+					writer.Key("Gender");
+					writer.String(gender);
+					writer.Key("Age");																	//Can be change if new detection of the same PersonId
+					writer.Int(static_cast<int>(track_info->face_attributes.age.value));				//To have a entire number for the age
+					writer.Key("Emotion");																//Can be change if new detection of the same PersonId
+					writer.String(emotion);
+					writer.Key("Ancestry");
+					writer.String(ancestry);
+					writer.Key("Attention_time");													    //Can be change if new detection of the same PersonId
+					writer.Double(track_info->attention_time);											//Attention time of the person in second
+					writer.EndObject();
+
+					// Print the JSON object
+					cout << s.GetString() << endl;
 				}
 				else {
 					std::cout << "New person detected!" << std::endl;
@@ -504,69 +525,7 @@ int main(int argc, char * argv[])
 			{
 				std::cout << "Values not set yet" << std::endl;
 			}
-
-			//Format data into a json object
-			/*StringBuffer s;
-			Writer<StringBuffer> writer(s);
-
-			writer.StartObject();               // Between StartObject()/EndObject(), 
-			writer.Key("PersonId");                // output a key,
-			writer.Uint(track_info->person_id);
-			writer.Key("Gender");
-			writer.Bool(true);
-			writer.Key("Age");
-			writer.Bool(false);
-			writer.Key("Emotion");
-			writer.Null();
-			writer.Key("Ancestry");
-			writer.Uint(123);
-			writer.Key("Attention_time");
-			writer.Double(3.1416);
-			writer.EndObject();
-
-			// {"hello":"world","t":true,"f":false,"n":null,"i":123,"pi":3.1416,"a":[0,1,2,3]}
-			cout << s.GetString() << endl;*/
 		}
-
-        
-        // Draw EfTrackInfo to the image.
-        //drawVisuals(buffer_image, track_info_array, fps);
-        
-        // Show image with visualizations.
-        //cv::imshow(window_name, buffer_image);
-        
-        // tidy up the visuals
-        //fcnEfFreeTrackInfo(&track_info_array, eyeface_state);
-        
-        // Wait for key press and quit / customize GUI based on key.
-        /*char key = cvWaitKey(1);
-        
-        // Quit.
-        //if (key == 27)
-        {
-            std::cout << "Key ESC pressed." << std::endl;
-            break;
-        }
-        
-        switch (key)
-        {
-            // Turn on / off fps.
-        case 'F':
-        case 'f':
-            show_fps = !show_fps;
-            break;
-            // Turn on / off landmark visualisation. (Must be enabled in config.ini as well.)
-        case 'L':
-        case 'l':
-            show_landmarks = !show_landmarks;
-            break;
-            // Turn on / off attention visualisation (green).
-        case 'A':
-        case 'a':
-            show_attention = !show_attention;
-            break;
-        }
-		*/
     }
     
     std::cout << "Exiting - shutting down." << std::endl;
@@ -916,8 +875,8 @@ void drawVisuals(cv::Mat & image, EfTrackInfoArray track_info_array, double fps)
 }
 
 
-string maleOrFemaleFunct(double response) {
-	string gender = "";
+const char* maleOrFemaleFunct(double response) {
+	const char* gender = "";
 	if (response < 0) {
 		return gender = "male";
 	}
@@ -930,8 +889,8 @@ string maleOrFemaleFunct(double response) {
 }
 
 
-string ancestryFunct(int response) {
-	string ancestry = "";
+const char* ancestryFunct(int response) {
+	const char* ancestry = "";
 	switch (response) {
 	case 0:
 		return ancestry = "unknown";
@@ -944,3 +903,16 @@ string ancestryFunct(int response) {
 	}
 }
 
+
+const char* emotionFunct(double response) {
+	const char* emotion = "";
+	if (response == -1) {
+		return emotion = "NotSmiling";
+	}
+	else if (response == 1) {
+		return emotion = "Smiling";
+	}
+	else { //Equal 0
+		return emotion = "Unknown";
+	}
+}
