@@ -38,8 +38,13 @@
 #include <string>
 #include <vector>
 #include <math.h>
+#include <winsock2.h>
+#include <curl/curl.h>
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
+#include "socket/SocketClient.h"
+#include "socket/SocketServer.h"
+
 
 //For use rapidjson library easier
 using namespace rapidjson;
@@ -341,6 +346,10 @@ const char* ancestryFunct(int response);
 
 const char* emotionFunct(double response);
 
+//void sendDataToServer(StringBuffer buffer);
+
+void onError(errorStruct *e);
+
 
 // This function will run during execution.
 int main(int argc, char * argv[])
@@ -515,7 +524,14 @@ int main(int argc, char * argv[])
 					writer.EndObject();
 
 					// Print the JSON object
-					cout << s.GetString() << endl;
+					cout << s.GetString() << endl;	
+					//sendDataToServer(s.GetString);
+
+					/*SocketClient client("127.0.0.1", 5555);
+					client.setErrorCallback(onError);
+					client.connect();
+					client.send("Hello World!");
+					client.close();*/
 				}
 				else {
 					std::cout << "New person detected!" << std::endl;
@@ -916,3 +932,40 @@ const char* emotionFunct(double response) {
 		return emotion = "Unknown";
 	}
 }
+
+//void sendDataToServer(StringBuffer buffer) {
+//	CURL *curl;
+//	CURLcode res;
+//
+//	/* in windows, this will init the winsock stuff */
+//	curl_global_init(CURL_GLOBAL_ALL);
+//
+//	/* get a curl handle */
+//	curl = curl_easy_init();
+//	if (curl) {
+//		/* first set the url that is about to receive our post. this url can
+//		just as well be a https:// url if that is what should receive the
+//		data. */
+//		curl_easy_setopt(curl, CURLOPT_URL, "http://127.0.0.1/");
+//		/* now specify the post data */
+//		//curl_easy_setopt(curl, curlopt_postfields, "name=daniel&project=curl");
+//		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, "buffer");
+//
+//		/* perform the request, res will get the return code */
+//		res = curl_easy_perform(curl);
+//		/* check for errors */
+//		if (res != CURLE_OK)
+//			fprintf(stderr, "curl_easy_perform() failed: %s\n",
+//				curl_easy_strerror(res));
+//
+//		/* always cleanup */
+//		curl_easy_cleanup(curl);
+//	}
+//	curl_global_cleanup();
+//}
+
+void onError(errorStruct *e)
+{
+	cout << e->code << " : " << e->message << endl;
+}
+
