@@ -487,6 +487,7 @@ int main(int argc, char * argv[])
 		// For every track, get the information (age, gender, emotion, ancestry)
 		for (unsigned int i = 0; i < track_info_array.num_tracks; i++)
 		{
+			std::cout << track_info_array.num_tracks << std::endl;
 			EfTrackInfo * track_info = &(track_info_array.track_info[i]);
 
 			//All verification before sending any data to server

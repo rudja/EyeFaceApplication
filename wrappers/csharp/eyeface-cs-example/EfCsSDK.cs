@@ -433,15 +433,28 @@ namespace Eyedea.EyeFace
         /// <summary>Gender classifier score function response (for data analysts / statisticians).</summary>
         public double response;
 
-        public override string ToString() {
-            String res = "Gender\t  = ";
-            if (value == EfGenderClass.EF_GENDER_FEMALE) {
-                return res + "female";
+        //public override string ToString() {
+        //    String res = "Gender\t  = ";
+        //    if (value == EfGenderClass.EF_GENDER_FEMALE) {
+        //        return res + "female";
+        //    }
+        //    if (value == EfGenderClass.EF_GENDER_MALE) {
+        //        return res + "male";
+        //    }
+        //    return res + "unknown";
+        //}
+
+        public override string ToString()
+        {
+            if (value == EfGenderClass.EF_GENDER_FEMALE)
+            {
+                return "female";
             }
-            if (value == EfGenderClass.EF_GENDER_MALE) {
-                return res + "male";
+            if (value == EfGenderClass.EF_GENDER_MALE)
+            {
+                return "male";
             }
-            return res + "unknown";
+            return "unknown";
         }
     };
 
@@ -467,15 +480,28 @@ namespace Eyedea.EyeFace
         /// <summary>Emotion classifier score function response (for data analysts / statisticians).</summary>
         public double response;
 
-        public override string ToString() {
-            String res = "Emotion\t  = ";
-            if (value == EfEmotionClass.EF_EMOTION_NOTSMILING) {
-                return res + "not smiling";
+        //public override string ToString() {
+        //    String res = "Emotion\t  = ";
+        //    if (value == EfEmotionClass.EF_EMOTION_NOTSMILING) {
+        //        return res + "not smiling";
+        //    }
+        //    if (value == EfEmotionClass.EF_EMOTION_SMILING) {
+        //        return res + "smiling";
+        //    }
+        //    return res + "unknown";
+        //}
+
+        public override string ToString()
+        {
+            if (value == EfEmotionClass.EF_EMOTION_NOTSMILING)
+            {
+                return "not smiling";
             }
-            if (value == EfEmotionClass.EF_EMOTION_SMILING) {
-                return res + "smiling";
+            if (value == EfEmotionClass.EF_EMOTION_SMILING)
+            {
+                return "smiling";
             }
-            return res + "unknown";
+            return "unknown";
         }
     };
 
@@ -503,18 +529,35 @@ namespace Eyedea.EyeFace
         /// <summary>Estimate of probability that the person is of the given ancestry. (for data analysts / statisticians).</summary>
         public double response;
 
-        public override string ToString() {
-            String res = "Ancestry  = ";
-            if (value == EfAncestryClass.EF_ANCESTRY_AFRICAN) {
-                return res + "african";
+        //public override string ToString() {
+        //    String res = "Ancestry  = ";
+        //    if (value == EfAncestryClass.EF_ANCESTRY_AFRICAN) {
+        //        return res + "african";
+        //    }
+        //    if (value == EfAncestryClass.EF_ANCESTRY_ASIAN) {
+        //        return res + "asian";
+        //    }
+        //    if (value == EfAncestryClass.EF_ANCESTRY_CAUCASIAN) {
+        //        return res + "caucasian";
+        //    }
+        //    return res + "unknown";
+        //}
+
+        public override string ToString()
+        {
+            if (value == EfAncestryClass.EF_ANCESTRY_AFRICAN)
+            {
+                return "african";
             }
-            if (value == EfAncestryClass.EF_ANCESTRY_ASIAN) {
-                return res + "asian";
+            if (value == EfAncestryClass.EF_ANCESTRY_ASIAN)
+            {
+                return "asian";
             }
-            if (value == EfAncestryClass.EF_ANCESTRY_CAUCASIAN) {
-                return res + "caucasian";
+            if (value == EfAncestryClass.EF_ANCESTRY_CAUCASIAN)
+            {
+                return "caucasian";
             }
-            return res + "unknown";
+            return "unknown";
         }
     };
 

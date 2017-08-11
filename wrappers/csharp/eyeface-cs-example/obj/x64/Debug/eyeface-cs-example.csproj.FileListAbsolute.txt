@@ -65,4 +65,6 @@ C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\wrappers\csharp\eyeface-
 C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\wrappers\csharp\eyeface-cs-example\tr\ZedGraph.resources.dll
 C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\wrappers\csharp\eyeface-cs-example\zh-cn\ZedGraph.resources.dll
 C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\wrappers\csharp\eyeface-cs-example\zh-tw\ZedGraph.resources.dll
+C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\wrappers\csharp\eyeface-cs-example\Newtonsoft.Json.dll
+C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\wrappers\csharp\eyeface-cs-example\Newtonsoft.Json.xml
 C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\wrappers\csharp\eyeface-cs-example\obj\x64\Debug\eyeface-cs-example.csprojResolveAssemblyReference.cache

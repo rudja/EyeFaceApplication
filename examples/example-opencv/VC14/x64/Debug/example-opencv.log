@@ -1,4 +1,4 @@
 ﻿  example-opencv.cpp
-c:\users\innovation\documents\github\eyefaceapplication\examples\example-opencv\example-opencv.cpp(920): warning C4715: 'ancestryFunct' : les chemins de contrôle ne retournent pas tous une valeur
+c:\users\innovation\documents\github\eyefaceapplication\examples\example-opencv\example-opencv.cpp(921): warning C4715: 'ancestryFunct' : les chemins de contrôle ne retournent pas tous une valeur
   example-opencv.vcxproj -> C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\examples\example-opencv\VC14\\..\example-opencv.exe
   example-opencv.vcxproj -> C:\Users\Innovation\Documents\GitHub\EyeFaceApplication\examples\example-opencv\VC14\\..\example-opencv.pdb (Full PDB)
